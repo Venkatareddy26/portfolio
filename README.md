@@ -1,37 +1,39 @@
-# Venkata Reddy V – Portfolio
+# Venkata Reddy V — Portfolio
 
-Static portfolio site showcasing travel/CRM dashboard work, skills, and contact details. Built with hand-authored HTML, CSS, and a light touch of JavaScript for nav and reveal effects.
+Full-stack developer focusing on production-ready web experiences: RESTful APIs, responsive React UIs, and data-backed dashboards.
 
-## Highlights
-- Modern, responsive UI with animated grid background and hover micro-interactions.
-- Projects: Travel Dashboard Portal (spend/trip KPIs) and CRM Control Center (pipeline/teams).
-- Contact section with structured inquiry form and direct mailto actions.
-- Downloadable resume exposed via clear CTAs and footer buttons.
+## Quick summary
+- **Name:** Venkata Reddy V
+- **Role:** Full-stack developer
+- **Location:** Bangalore, India (remote friendly)
+- **Currently:** Software Development Intern at E-S-Genius-tech Solutions
 
-## Tech
-- HTML, CSS (custom, no framework), vanilla JS (nav toggle, typewriter, reveal on view).
-- Assets: `assets/travel-dashboard.png`, `assets/crm-dashboard.png`.
+I combine backend correctness with frontend polish to ship reliable products. This repository contains my portfolio site and assets used to showcase selected work.
 
-## Run locally
-```bash
-git clone https://github.com/Venkatareddy26/portfolio.git
-cd portfolio
-# Option 1: open directly
-#   double-click index.html or open in your browser
-# Option 2: serve locally (example with npx serve)
-npx serve .
+## Technologies
+- Node.js / Express
+- React, HTML, CSS, JavaScript
+- MySQL, MongoDB
+
+## Repo contents
+- `index.html`, `styles.css`, `script.js` — portfolio site source
+- `assets/` — screenshots used on the site
+- `resume.pdf` — downloadable resume
+
+## View locally
+Open `index.html` in your browser or serve the folder:
+
+```powershell
+Set-Location 'c:\Users\venka\OneDrive\Desktop\Venkata_Reddy_portfolio'
+python -m http.server 8000
+# then open http://localhost:8000
 ```
-
-## Project structure (top-level)
-- `index.html` – page markup and content
-- `styles.css` – layout, theme, animations
-- `script.js` – nav toggle, typewriter, intersection reveal
-- `assets/` – project screenshots
-- `resume.pdf` – downloadable resume
 
 ## Contact
 - Email: venkatareddy.2601@gmail.com
 - GitHub: https://github.com/Venkatareddy26
-- Resume: `resume.pdf` (linked in hero, nav, contact, footer)
 
-Built by Venkata Reddy V — eager to learn, ship, and collaborate.***
+## Notes
+- A backup of the previous `main` branch is available as `backup-origin-main`.
+
+If you'd like a longer README with project case studies, deployment instructions, or CI badges, tell me what to include and I'll update it.
