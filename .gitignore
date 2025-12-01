@@ -1,26 +1,9 @@
-# Ignore node modules if you use Node tools
 node_modules/
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# IDE
-.vscode/
-
-# Environment
-.env
-
-# Build folders
 dist/
 build/
-
-# Logs
-logs/
+.vscode/
+.DS_Store
+Thumbs.db
+.env
+.env.*
 *.log
-
-# Temporary files
-*.tmp
-
-# PDF resumes (optional): uncomment if you don't want them in the repo
-# *.pdf
