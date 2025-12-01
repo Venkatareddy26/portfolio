@@ -1,39 +1,37 @@
-# Venkata Reddy V — Portfolio
+# Venkata Reddy V - Portfolio
 
-Full-stack developer focusing on production-ready web experiences: RESTful APIs, responsive React UIs, and data-backed dashboards.
+Static portfolio site showcasing travel/CRM dashboards, skills, and contact details. Built with hand-crafted HTML, CSS, and a light touch of JavaScript.
 
-## Quick summary
-- **Name:** Venkata Reddy V
-- **Role:** Full-stack developer
-- **Location:** Bangalore, India (remote friendly)
-- **Currently:** Software Development Intern at E-S-Genius-tech Solutions
+## Highlights
+- Modern, responsive UI with animated grid background and hover micro-interactions.
+- Featured work: Travel Dashboard Portal (spend/trip KPIs) and CRM Control Center (pipeline/teams).
+- Structured contact form plus direct mailto actions.
+- Clear CTAs for downloading the latest resume.
 
-I combine backend correctness with frontend polish to ship reliable products. This repository contains my portfolio site and assets used to showcase selected work.
+## Tech
+- HTML, CSS (custom; no framework), vanilla JS (nav toggle, typewriter, reveal on view).
+- Assets: `assets/travel-dashboard.png`, `assets/crm-dashboard.png`.
 
-## Technologies
-- Node.js / Express
-- React, HTML, CSS, JavaScript
-- MySQL, MongoDB
-
-## Repo contents
-- `index.html`, `styles.css`, `script.js` — portfolio site source
-- `assets/` — screenshots used on the site
-- `resume.pdf` — downloadable resume
-
-## View locally
-Open `index.html` in your browser or serve the folder:
-
-```powershell
-Set-Location 'c:\Users\venka\OneDrive\Desktop\Venkata_Reddy_portfolio'
-python -m http.server 8000
-# then open http://localhost:8000
+## Run locally
+```bash
+git clone https://github.com/Venkatareddy26/venkatareddy-portfolio.git
+cd venkatareddy-portfolio
+# Option 1: open directly
+#   open index.html in your browser
+# Option 2: serve locally (example)
+npx serve .
 ```
+
+## Project structure
+- `index.html` - page markup and content
+- `styles.css` - layout, theme, animations
+- `script.js` - nav toggle, typewriter, intersection reveal
+- `assets/` - project screenshots
+- `resume.pdf` - downloadable resume
 
 ## Contact
 - Email: venkatareddy.2601@gmail.com
 - GitHub: https://github.com/Venkatareddy26
+- Resume: `resume.pdf` (linked in hero, nav, contact, footer)
 
-## Notes
-- A backup of the previous `main` branch is available as `backup-origin-main`.
-
-If you'd like a longer README with project case studies, deployment instructions, or CI badges, tell me what to include and I'll update it.
+Built by Venkata Reddy V - eager to learn, ship, and collaborate.

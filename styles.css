@@ -930,6 +930,22 @@ main {
   100% { background-position: 80px 80px, 80px 80px; }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .page-grid {
+    animation: none !important;
+  }
+}
+
 @media (max-width: 1024px) {
   .container {
     padding: 0 1rem;
@@ -1036,6 +1052,24 @@ main {
   .social-row {
     justify-content: flex-start;
   }
+
+  .project-image {
+    margin: 0.2rem 0 0.5rem;
+    border-radius: 12px;
+  }
+
+  .project-structure .code-block {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .cta-card {
+    gap: 0.9rem;
+  }
+
+  .contact-form {
+    padding: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1048,11 +1082,24 @@ main {
     line-height: 1.1;
   }
 
+  .hero-actions {
+    gap: 0.5rem;
+  }
+
   .cta-card {
     padding: 1.2rem;
   }
 
   .project-visual {
     min-height: 160px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btn.cta-main {
+    font-size: 1rem;
+    padding: 0.95rem 1.2rem;
   }
 }
