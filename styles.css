@@ -463,9 +463,9 @@ body::after {
 
 .info-item {
     padding: 1.75rem;
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(14, 165, 233, 0.08));
+    background: rgba(30, 41, 59, 0.6);
     border-radius: 16px;
-    border: 1px solid rgba(59, 130, 246, 0.2);
+    border: 1px solid rgba(59, 130, 246, 0.3);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -488,14 +488,14 @@ body::after {
 }
 
 .info-item:hover {
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(14, 165, 233, 0.15));
+    background: rgba(30, 41, 59, 0.8);
     transform: translateY(-5px);
-    box-shadow: 0 12px 32px rgba(37, 99, 235, 0.3);
-    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow: 0 12px 32px rgba(37, 99, 235, 0.4);
+    border-color: rgba(59, 130, 246, 0.5);
 }
 
 .info-item strong {
-    color: #0ea5e9;
+    color: #60a5fa;
     display: block;
     margin-bottom: 0.75rem;
     font-size: 0.875rem;
@@ -505,9 +505,10 @@ body::after {
 }
 
 .info-item span {
-    color: rgba(255, 255, 255, 0.95);
+    color: rgba(255, 255, 255, 1);
     font-size: 1rem;
     line-height: 1.6;
+    font-weight: 500;
 }
 
 /* Timeline */
