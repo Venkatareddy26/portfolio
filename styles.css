@@ -129,17 +129,19 @@ body::after {
 .logo {
     font-size: 1.5rem;
     font-weight: 800;
-    background: linear-gradient(135deg, #fff 0%, #e0e7ff 100%);
+    background: linear-gradient(135deg, #fff 0%, #fbbf24 50%, #ec4899 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-decoration: none;
     transition: transform 0.3s ease;
     letter-spacing: 0.5px;
+    filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.3));
 }
 
 .logo:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 20px rgba(236, 72, 153, 0.5));
 }
 
 .nav-links {
@@ -184,16 +186,17 @@ body::after {
 }
 
 .nav-links .btn-primary {
-    background: rgba(255, 255, 255, 0.25);
+    background: linear-gradient(135deg, #ec4899, #a855f7);
     color: white;
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 10px 24px;
+    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
 }
 
 .nav-links .btn-primary:hover {
-    background: rgba(255, 255, 255, 0.35);
+    background: linear-gradient(135deg, #f472b6, #c084fc);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 20px rgba(236, 72, 153, 0.6);
 }
 
 .mobile-menu-btn {
@@ -397,7 +400,7 @@ body::after {
 }
 
 .bg-alt {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(20px);
 }
 
@@ -714,7 +717,7 @@ body::after {
     height: 240px;
     overflow: hidden;
     position: relative;
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(6, 182, 212, 0.2));
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.3), rgba(168, 85, 247, 0.3));
 }
 
 .project-image::after {
@@ -1014,37 +1017,37 @@ body::after {
 /* Responsive */
 @media (max-width: 768px) {
     .navbar {
-        top: 15px;
-        width: calc(100% - 30px);
-        padding: 0 20px;
-        border-radius: 40px;
+        top: 10px;
+        width: calc(100% - 20px);
+        padding: 0 15px;
     }
 
     .nav-content {
-        padding: 0.875rem 0;
+        padding: 0.75rem 0;
     }
 
     .logo {
-        font-size: 1.375rem;
+        font-size: 1.25rem;
     }
 
     .nav-links {
         position: fixed;
-        top: 85px;
-        left: 15px;
-        right: 15px;
-        background: rgba(255, 255, 255, 0.15);
+        top: 75px;
+        left: 10px;
+        right: 10px;
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(88, 28, 135, 0.95));
         backdrop-filter: blur(30px) saturate(180%);
         flex-direction: column;
         padding: 1.5rem;
-        border-radius: 24px;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        border-radius: 20px;
+        border: 1px solid rgba(236, 72, 153, 0.4);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(236, 72, 153, 0.3);
         transform: translateY(-20px);
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         gap: 0.5rem;
+        z-index: 999;
     }
 
     .nav-links li {
@@ -1057,24 +1060,35 @@ body::after {
         text-align: center;
         width: 100%;
         font-size: 1rem;
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: rgba(236, 72, 153, 0.15);
+        border: 1px solid rgba(236, 72, 153, 0.3);
+        border-radius: 12px;
     }
 
     .nav-links a:hover {
-        background: rgba(255, 255, 255, 0.2);
+        background: rgba(236, 72, 153, 0.3);
+        border-color: rgba(236, 72, 153, 0.5);
     }
 
     .nav-links .btn-primary {
         margin-top: 0.5rem;
         width: 100%;
-        background: rgba(255, 255, 255, 0.3);
-        border: 1px solid rgba(255, 255, 255, 0.5);
+        background: linear-gradient(135deg, #ec4899, #a855f7);
+        border: 1px solid rgba(255, 255, 255, 0.3);
         padding: 14px 20px;
+        box-shadow: 0 4px 15px rgba(236, 72, 153, 0.5);
+    }
+
+    .nav-links .btn-primary:hover {
+        background: linear-gradient(135deg, #f472b6, #c084fc);
+        box-shadow: 0 6px 20px rgba(236, 72, 153, 0.6);
     }
 
     .nav-links.active {
         transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
         opacity: 1;
         visibility: visible;
     }
