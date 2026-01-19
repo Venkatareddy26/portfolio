@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const typewriter = document.getElementById('typewriter');
   if (typewriter) {
-    const words = ['Web app builder', 'Dashboard crafter', 'React & Node.js engineer'];
+    const words = ['Full Stack Developer', 'Dashboard crafter', 'React & Node.js engineer'];
     let wordIndex = 0;
     let charIndex = 0;
     let deleting = false;
