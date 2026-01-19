@@ -24,6 +24,13 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {
@@ -52,6 +59,13 @@ body::before {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 h1, h2, h3, h4 {
@@ -187,9 +201,20 @@ p {
   gap: 5px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 12px;
-  padding: 0.45rem 0.5rem;
+  padding: 0.5rem 0.55rem;
   background: rgba(255, 255, 255, 0.03);
   cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-toggle:hover,
+.nav-toggle:focus {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .nav-toggle span {
@@ -197,6 +222,19 @@ p {
   width: 20px;
   height: 2px;
   background: var(--text);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 main {
@@ -298,11 +336,18 @@ main {
   letter-spacing: 0.01em;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.4rem;
   transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease, border-color 0.2s ease;
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  min-height: 44px;
+  text-align: center;
+}
+
+.btn:active {
+  transform: scale(0.98);
 }
 
 .btn::after {
@@ -377,26 +422,27 @@ main {
 }
 
 .social-row a {
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: grid;
   place-items: center;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: transform 0.15s ease, border-color 0.2s ease, background 0.2s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
   color: #cdd5e0;
 }
 
-.social-row a:hover {
+.social-row a:hover,
+.social-row a:focus-visible {
   transform: translateY(-2px);
   border-color: rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.08);
 }
 
 .social-row svg {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   fill: currentColor;
 }
 
@@ -967,10 +1013,26 @@ main {
   }
 }
 
+@media (max-width: 1200px) {
+  .container {
+    width: 92vw;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-top: 2.5rem;
+  }
+
+  .hero-card {
+    position: static;
+  }
+}
+
 @media (max-width: 1024px) {
   .container {
     padding: 0 1.5rem;
-    width: 95vw;
+    width: 94vw;
   }
 
   .nav-links {
@@ -991,6 +1053,7 @@ main {
     pointer-events: none;
     transform: translateY(-10px);
     transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 100;
   }
 
   .nav-links.open {
@@ -1003,6 +1066,7 @@ main {
   .nav-links .pill {
     width: 100%;
     padding: 0.75rem 1rem;
+    text-align: left;
   }
 
   .nav-toggle {
@@ -1011,18 +1075,18 @@ main {
 
   .nav {
     border-radius: 20px;
-    flex-wrap: wrap;
-    gap: 0.75rem;
+    padding: 0.9rem 1.2rem;
   }
 
   .hero {
     grid-template-columns: 1fr;
     padding-top: 2rem;
     gap: 2rem;
+    min-height: auto;
   }
 
-  .hero-card {
-    position: static;
+  .hero h1 {
+    font-size: clamp(2.5rem, 8vw, 4rem);
   }
 
   .project-card {
@@ -1031,57 +1095,44 @@ main {
 
   .about-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
 
   .cta-card {
     flex-direction: column;
     align-items: flex-start;
   }
+
+  .stat-row {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
 }
 
-@media (max-width: 640px) {
-  main {
-    padding-top: 7rem;
-  }
-
+@media (max-width: 768px) {
   .container {
-    padding: 0 1rem;
+    width: 95vw;
+    padding: 0 1.25rem;
   }
 
-  .nav {
-    padding: 0.85rem 1rem;
+  main {
+    padding-top: 6.5rem;
+  }
+
+  .section {
+    padding: 3rem 0 1.5rem;
   }
 
   .hero {
     padding-top: 1.5rem;
-    min-height: auto;
-  }
-
-  .hero-actions {
-    width: 100%;
-    flex-direction: column;
-  }
-
-  .btn {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .project-card,
-  .about-copy,
-  .about-panel,
-  .skill-card,
-  .timeline-card,
-  .hero-card {
-    padding: 1.5rem;
-  }
-
-  .project-visual {
-    min-height: 160px;
+    gap: 1.75rem;
   }
 
   .hero h1 {
-    font-size: clamp(2.5rem, 10vw, 3.5rem);
+    font-size: clamp(2.25rem, 7vw, 3.5rem);
   }
 
   .hero-role {
@@ -1092,79 +1143,430 @@ main {
     font-size: 1rem;
   }
 
-  .type-line {
-    flex-wrap: wrap;
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
   }
 
   .social-row {
-    justify-content: flex-start;
-  }
-
-  .project-image {
-    margin: 0.5rem 0 0.75rem;
-    border-radius: 16px;
-  }
-
-  .project-structure .code-block {
-    font-size: 0.85rem;
-    line-height: 1.5;
-    padding: 1rem;
-  }
-
-  .cta-card {
-    gap: 1.25rem;
-    padding: 1.5rem;
-  }
-
-  .contact-form {
-    padding: 1.5rem;
-  }
-
-  .section {
-    padding: 3rem 0 1.5rem;
+    justify-content: center;
   }
 
   .stat-row {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
-}
 
-@media (max-width: 480px) {
-  .hero {
+  .project-grid {
     gap: 1.5rem;
   }
 
-  .hero h1 {
-    font-size: 2.25rem;
-    line-height: 1.15;
+  .project-card,
+  .hero-card,
+  .about-copy,
+  .about-panel {
+    padding: 1.5rem;
   }
 
-  .hero-actions {
-    gap: 0.75rem;
+  .skill-grid {
+    grid-template-columns: 1fr;
   }
 
-  .cta-card {
-    padding: 1.25rem;
-  }
-
-  .project-visual {
-    min-height: 140px;
+  .callouts {
+    grid-template-columns: 1fr;
   }
 
   .form-grid {
     grid-template-columns: 1fr;
   }
 
-  .btn.cta-main {
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  main {
+    padding-top: 6.5rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+    width: 96vw;
+  }
+
+  .nav {
+    padding: 0.85rem 1rem;
+  }
+
+  .nav-links {
+    right: 0.5rem;
+    min-width: calc(100vw - 2rem);
+    max-width: 320px;
+  }
+
+  .hero {
+    padding-top: 1.25rem;
+    gap: 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 9vw, 3rem);
+    margin: 0.35rem 0 0.6rem;
+  }
+
+  .hero-role {
     font-size: 1rem;
+  }
+
+  .lede {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .type-line {
+    flex-wrap: wrap;
+    font-size: 0.95rem;
+  }
+
+  .typewriter {
+    min-width: 180px;
+  }
+
+  .availability {
+    font-size: 0.8rem;
+  }
+
+  .hero-actions {
+    margin: 1rem 0 0.75rem;
+  }
+
+  .btn {
+    padding: 0.9rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .btn.cta-main {
     padding: 1rem 1.5rem;
+    font-size: 1rem;
   }
 
-  .project-card {
+  .social-row {
+    justify-content: flex-start;
+    margin: 0.75rem 0 1.25rem;
+  }
+
+  .social-row a {
+    width: 42px;
+    height: 42px;
+  }
+
+  .stat-row {
+    gap: 0.75rem;
+  }
+
+  .stat {
+    padding: 1rem;
+  }
+
+  .section {
+    padding: 2.5rem 0 1.25rem;
+  }
+
+  .section-head h2 {
+    font-size: 1.75rem;
+  }
+
+  .project-card,
+  .hero-card,
+  .about-copy,
+  .about-panel,
+  .skill-card,
+  .timeline-card {
+    padding: 1.25rem;
+    border-radius: 18px;
+  }
+
+  .project-visual {
+    min-height: 140px;
+  }
+
+  .project-image {
+    margin: 0.5rem 0 0.75rem;
+    border-radius: 14px;
+  }
+
+  .project-structure .code-block {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    padding: 0.85rem;
+  }
+
+  .pill {
+    font-size: 0.85rem;
+    padding: 0.35rem 0.7rem;
+  }
+
+  .badge {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.65rem;
+  }
+
+  .cta-card {
+    gap: 1rem;
     padding: 1.25rem;
   }
 
-  .hero-card {
+  .contact-form {
     padding: 1.25rem;
+  }
+
+  .field input,
+  .field select,
+  .field textarea {
+    padding: 0.85rem;
+    font-size: 0.95rem;
+  }
+
+  .timeline {
+    padding-left: 1.2rem;
+  }
+
+  .timeline-card {
+    padding: 1rem;
+  }
+
+  .footer {
+    padding: 1.75rem 0 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.85rem;
+  }
+
+  main {
+    padding-top: 6rem;
+  }
+
+  .nav {
+    padding: 0.75rem 0.85rem;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+
+  .nav-actions .pill {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .hero {
+    gap: 1.25rem;
+    padding-top: 1rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.85rem, 8.5vw, 2.5rem);
+    line-height: 1.15;
+    margin: 0.3rem 0 0.5rem;
+  }
+
+  .hero-role {
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .lede {
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  .type-line {
+    font-size: 0.9rem;
+    gap: 0.4rem;
+  }
+
+  .typewriter {
+    min-width: 160px;
+    font-size: 0.9rem;
+  }
+
+  .availability {
+    font-size: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .availability .line {
+    width: 30px;
+  }
+
+  .hero-actions {
+    gap: 0.65rem;
+    margin: 0.85rem 0 0.65rem;
+  }
+
+  .btn {
+    padding: 0.85rem 1.15rem;
+    font-size: 0.9rem;
+  }
+
+  .btn.cta-main {
+    font-size: 0.95rem;
+    padding: 0.95rem 1.35rem;
+  }
+
+  .social-row a {
+    width: 38px;
+    height: 38px;
+  }
+
+  .social-row svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .stat {
+    padding: 0.85rem;
+  }
+
+  .stat .label {
+    font-size: 0.85rem;
+  }
+
+  .stat .value {
+    font-size: 0.95rem;
+  }
+
+  .section {
+    padding: 2rem 0 1rem;
+  }
+
+  .section-head h2 {
+    font-size: 1.6rem;
+  }
+
+  .eyebrow {
+    font-size: 0.8rem;
+  }
+
+  .project-card,
+  .hero-card,
+  .about-copy,
+  .about-panel,
+  .skill-card,
+  .timeline-card,
+  .cta-card {
+    padding: 1.15rem;
+    border-radius: 16px;
+  }
+
+  .project-card h3,
+  .hero-card h3,
+  .about-copy h4,
+  .skill-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .project-visual {
+    min-height: 120px;
+  }
+
+  .project-structure .code-block {
+    font-size: 0.75rem;
+    padding: 0.75rem;
+  }
+
+  .pill {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .badge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.55rem;
+  }
+
+  .card-list,
+  .panel-list,
+  .structure-list,
+  .timeline ul {
+    font-size: 0.9rem;
+    padding-left: 1rem;
+  }
+
+  .contact-form {
+    padding: 1.15rem;
+  }
+
+  .field {
+    gap: 0.3rem;
+  }
+
+  .field span {
+    font-size: 0.9rem;
+  }
+
+  .field input,
+  .field select,
+  .field textarea {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .field textarea {
+    min-height: 100px;
+  }
+
+  .timeline {
+    padding-left: 1rem;
+  }
+
+  .timeline-card {
+    padding: 0.9rem;
+  }
+
+  .timeline-card::before {
+    left: -0.85rem;
+    width: 10px;
+    height: 10px;
+  }
+
+  .footer {
+    padding: 1.5rem 0 1.75rem;
+  }
+
+  .footer p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .btn.cta-main {
+    padding: 0.9rem 1.2rem;
+  }
+
+  .project-card,
+  .hero-card,
+  .cta-card {
+    padding: 1rem;
   }
 }
