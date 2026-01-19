@@ -476,10 +476,10 @@ body::after {
 }
 
 .info-item {
-    padding: 1.75rem;
-    background: rgba(30, 41, 59, 0.6);
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.12), rgba(14, 165, 233, 0.08));
     border-radius: 16px;
-    border: 1px solid rgba(59, 130, 246, 0.3);
+    border: 1px solid rgba(59, 130, 246, 0.35);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -492,7 +492,7 @@ body::after {
     left: 0;
     width: 4px;
     height: 100%;
-    background: linear-gradient(180deg, #2563eb, #0ea5e9);
+    background: linear-gradient(180deg, #3b82f6, #0ea5e9);
     transform: scaleY(0);
     transition: transform 0.3s ease;
 }
@@ -502,7 +502,7 @@ body::after {
 }
 
 .info-item:hover {
-    background: rgba(30, 41, 59, 0.8);
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.18), rgba(14, 165, 233, 0.12));
     transform: translateY(-5px);
     box-shadow: 0 12px 32px rgba(37, 99, 235, 0.4);
     border-color: rgba(59, 130, 246, 0.5);
@@ -511,16 +511,16 @@ body::after {
 .info-item strong {
     color: #60a5fa;
     display: block;
-    margin-bottom: 0.75rem;
-    font-size: 0.875rem;
+    margin-bottom: 0.875rem;
+    font-size: 0.8125rem;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
     font-weight: 700;
 }
 
 .info-item span {
-    color: rgba(255, 255, 255, 1);
-    font-size: 1rem;
+    color: #e0f2fe;
+    font-size: 1.0625rem;
     line-height: 1.6;
     font-weight: 500;
 }
