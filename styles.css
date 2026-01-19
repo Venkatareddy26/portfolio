@@ -212,6 +212,12 @@ p {
   overflow: hidden;
 }
 
+@media (min-width: 1025px) {
+  .nav-toggle {
+    display: none !important;
+  }
+}
+
 .nav-toggle {
   display: none;
   flex-direction: column;
