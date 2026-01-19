@@ -24,7 +24,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px;
+  scroll-padding-top: 120px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -238,7 +238,7 @@ p {
 }
 
 main {
-  padding-top: 7.5rem;
+  padding-top: 9rem;
   position: relative;
   z-index: 1;
   min-height: 100vh;
@@ -249,8 +249,9 @@ main {
   grid-template-columns: 1.2fr 0.8fr;
   gap: 3rem;
   align-items: start;
-  padding: 4rem 0 3rem;
+  padding: 1rem 0 3rem;
   min-height: calc(85vh - var(--safe-top));
+  scroll-margin-top: 100px;
 }
 
 .availability {
@@ -528,6 +529,7 @@ main {
 
 .section {
   padding: 4rem 0 2rem;
+  scroll-margin-top: 100px;
 }
 
 .section-head {
@@ -1119,11 +1121,12 @@ main {
   }
 
   main {
-    padding-top: 6.5rem;
+    padding-top: 8rem;
   }
 
   .section {
     padding: 3rem 0 1.5rem;
+    scroll-margin-top: 90px;
   }
 
   .hero {
@@ -1195,7 +1198,7 @@ main {
 
 @media (max-width: 640px) {
   main {
-    padding-top: 6.5rem;
+    padding-top: 7.5rem;
   }
 
   .container {
@@ -1279,6 +1282,7 @@ main {
 
   .section {
     padding: 2.5rem 0 1.25rem;
+    scroll-margin-top: 80px;
   }
 
   .section-head h2 {
@@ -1355,7 +1359,7 @@ main {
   }
 
   main {
-    padding-top: 6rem;
+    padding-top: 7rem;
   }
 
   .nav {
@@ -1450,6 +1454,7 @@ main {
 
   .section {
     padding: 2rem 0 1rem;
+    scroll-margin-top: 70px;
   }
 
   .section-head h2 {
