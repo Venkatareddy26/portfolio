@@ -1,16 +1,20 @@
 # Venkata Reddy V - Portfolio
 
-Static portfolio site showcasing travel/CRM dashboards, skills, and contact details. Built with hand-crafted HTML, CSS, and a light touch of JavaScript.
+Professional portfolio site showcasing full-stack development work, skills, and experience. Built with clean HTML, CSS, and vanilla JavaScript.
 
 ## Highlights
-- Modern, responsive UI with animated grid background and hover micro-interactions.
-- Featured work: Travel Dashboard Portal (spend/trip KPIs) and CRM Control Center (pipeline/teams).
-- Structured contact form plus direct mailto actions.
-- Clear CTAs for downloading the latest resume.
+- Professional blue color scheme designed for corporate appeal
+- Clean, responsive UI optimized for both mobile and desktop
+- Featured work: Travel Dashboard Portal (spend/trip KPIs) and CRM Control Center (pipeline/teams)
+- Smooth navigation with no distracting animations
+- Direct contact methods with email, phone, and GitHub links
 
-## Tech
-- HTML, CSS (custom; no framework), vanilla JS (nav toggle, typewriter, reveal on view).
-- Assets: `assets/travel-dashboard.png`, `assets/crm-dashboard.png`.
+## Tech Stack
+- HTML5 - Semantic markup and structure
+- CSS3 - Custom styling with professional blue theme, no frameworks
+- Vanilla JavaScript - Mobile menu toggle and smooth interactions
+- Google Fonts - Inter font family for modern typography
+- Assets: Project screenshots in `assets/` folder
 
 ## Run locally
 ```bash
@@ -22,12 +26,20 @@ cd venkatareddy-portfolio
 npx serve .
 ```
 
-## Project structure
-- `index.html` - page markup and content
-- `styles.css` - layout, theme, animations
-- `script.js` - nav toggle, typewriter, intersection reveal
-- `assets/` - project screenshots
-- `resume.pdf` - downloadable resume
+## Project Structure
+- `index.html` - Main page markup and content
+- `styles.css` - Professional styling with blue theme and responsive design
+- `script.js` - Mobile navigation toggle and smooth scroll behavior
+- `assets/` - Project screenshots (travel-dashboard.png, crm-dashboard.png)
+- `resume.pdf` - Downloadable resume
+
+## Design Features
+- Professional blue gradient color scheme (#2563eb, #3b82f6, #0ea5e9)
+- Fully responsive design for mobile, tablet, and desktop
+- Clean navigation with rounded pill design
+- Smooth hover effects without distracting animations
+- Optimized for HR and company viewing
+- High contrast text for excellent readability
 
 ## Contact
 - Email: venkatareddy.2601@gmail.com

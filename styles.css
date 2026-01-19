@@ -292,23 +292,7 @@ body::after {
     border: 1px solid rgba(59, 130, 246, 0.3);
 }
 
-.btn-primary::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.15);
-    transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
-}
 
-.btn-primary:hover::before {
-    width: 300px;
-    height: 300px;
-}
 
 .btn-primary:hover {
     transform: translateY(-3px);
@@ -406,28 +390,6 @@ body::after {
     border: 1px solid rgba(59, 130, 246, 0.3);
     box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(59, 130, 246, 0.1) inset;
     position: relative;
-    overflow: hidden;
-}
-
-.about-content::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
-    pointer-events: none;
-    animation: rotate 20s linear infinite;
-}
-
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
 }
 
 .about-text {
@@ -472,21 +434,7 @@ body::after {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
-.info-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 5px;
-    height: 100%;
-    background: linear-gradient(180deg, #3b82f6, #0ea5e9);
-    transform: scaleY(0);
-    transition: transform 0.4s ease;
-}
 
-.info-item:hover::before {
-    transform: scaleY(1);
-}
 
 .info-item:hover {
     background: linear-gradient(135deg, rgba(37, 99, 235, 0.22), rgba(14, 165, 233, 0.15));
@@ -574,22 +522,7 @@ body::after {
     overflow: hidden;
 }
 
-.timeline-content::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #2563eb, #0ea5e9);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-}
 
-.timeline-content:hover::before {
-    transform: scaleX(1);
-}
 
 .timeline-content:hover {
     background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.95));
@@ -668,22 +601,7 @@ body::after {
     position: relative;
 }
 
-.project-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(14, 165, 233, 0.1));
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
 
-.project-card:hover::before {
-    opacity: 1;
-}
 
 .project-card:hover {
     transform: translateY(-12px);
@@ -699,16 +617,7 @@ body::after {
     background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(14, 165, 233, 0.2));
 }
 
-.project-image::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
-    z-index: 1;
-}
+
 
 .project-image img {
     width: 100%;
@@ -786,39 +695,7 @@ body::after {
     overflow: hidden;
 }
 
-.skill-category::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, #2563eb, #0ea5e9);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-}
 
-.skill-category:hover::before {
-    transform: scaleX(1);
-}
-
-.skill-category::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-
-.skill-category:hover::after {
-    opacity: 1;
-}
 
 .skill-category:hover {
     background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.95));
