@@ -429,7 +429,7 @@ body::after {
 
 .info-item {
     padding: 2.25rem;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.85);
     border-radius: 16px;
     border: 1px solid rgba(139, 92, 246, 0.25);
     transition: all 0.3s ease;
@@ -451,7 +451,7 @@ body::after {
 }
 
 .info-item:hover {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.95);
     transform: translateY(-5px);
     border-color: rgba(139, 92, 246, 0.5);
     box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
