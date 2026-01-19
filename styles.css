@@ -429,7 +429,7 @@ body::after {
 
 .info-item {
     padding: 2.25rem;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(0, 0, 0, 0.9);
     border-radius: 16px;
     border: 1px solid rgba(139, 92, 246, 0.3);
     transition: all 0.3s ease;
@@ -451,7 +451,7 @@ body::after {
 }
 
 .info-item:hover {
-    background: rgba(255, 255, 255, 1);
+    background: rgba(0, 0, 0, 1);
     transform: translateY(-5px);
     border-color: rgba(139, 92, 246, 0.5);
     box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
@@ -462,7 +462,7 @@ body::after {
 }
 
 .info-item strong {
-    color: #6366f1;
+    color: #ffffff;
     display: block;
     margin-bottom: 0.75rem;
     font-size: 0.75rem;
@@ -472,7 +472,7 @@ body::after {
 }
 
 .info-item span {
-    color: #1a1a2e;
+    color: #ffffff;
     font-size: 1.0625rem;
     line-height: 1.6;
     font-weight: 500;
