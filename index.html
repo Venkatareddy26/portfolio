@@ -1,345 +1,258 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Venkata Reddy V | Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venkata Reddy V | Full-Stack Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="page-grid"></div>
-  <div class="glow glow-a"></div>
-  <div class="glow glow-b"></div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="#home" class="logo">VR.</a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="resume.pdf" download class="btn-primary">Resume</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-  <header class="nav-shell">
-    <div class="nav container">
-      <a href="#top" class="logo">VR<span>.</span></a>
-      <nav class="nav-links" id="nav-links">
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-        <a class="pill" href="resume.pdf" download aria-label="Download Venkata Reddy resume">Resume</a>
-      </nav>
-      <div class="nav-actions">
-        <a class="pill" href="mailto:venkatareddy.2601@gmail.com?subject=Hire%20Venkata%20Reddy&body=Hi%20Venkata%2C" aria-label="Hire Venkata Reddy">Hire me</a>
-        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <main class="container">
-    <section class="hero reveal" id="top">
-      <div class="hero-text">
-        <div class="availability">
-          <span class="line"></span>
-          <span>Available for full-time roles and select freelance work</span>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="badge">Available for full-time roles and select freelance work</div>
+                <h1 class="hero-title">Venkata Reddy V</h1>
+                <p class="hero-subtitle">Full-Stack Developer</p>
+                <p class="hero-description">
+                    Crafting reliable web experiences end-to-end. I take ideas from discovery to deploy with 
+                    clean REST APIs, thoughtful React UIs, and data layers that stay fast under pressure.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn-primary">View My Work</a>
+                    <a href="mailto:venkatareddy.2601@gmail.com" class="btn-secondary">Get In Touch</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/Venkatareddy26" target="_blank" rel="noopener" aria-label="GitHub">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:venkatareddy.2601@gmail.com" aria-label="Email">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
         </div>
-        <h1>Venkata Reddy <span>V</span></h1>
-        <p class="hero-role">Full-stack developer crafting reliable web experiences end-to-end.</p>
-        <div class="type-line">
-          <span>I am a</span>
-          <span class="typewriter" id="typewriter"></span>
-          <span class="cursor">|</span>
-        </div>
-        <p class="lede">
-          I take ideas from discovery to deploy. Clean REST APIs, thoughtful React UIs, and data layers that stay fast under pressure.
-          Currently shipping value as a Software Development Intern while hunting for teams that care about quality.
-        </p>
-        <div class="hero-actions">
-          <a class="btn cta-main" href="#projects">
-            See my work
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a class="btn download-btn" href="resume.pdf" download aria-label="Download Venkata Reddy resume">Download resume</a>
-        </div>
-        <div class="social-row">
-          <a href="https://github.com/Venkatareddy26" aria-label="GitHub" target="_blank" rel="noreferrer">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.4.7-4.2-1.6-4.2-1.6-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1 .1 1.5 1 1.5 1 .9 1.5 2.6 1.1 3.2.8.1-.7.4-1.1.7-1.4-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.3 1.2-3.2 0-.3-.5-1.4.1-2.8 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.4.2 2.5.1 2.8.8.9 1.3 2 1.3 3.2 0 4.7-2.8 5.7-5.5 6 .4.3.8 1 .8 2v3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
-          </a>
-          <a href="https://www.linkedin.com" aria-label="LinkedIn" target="_blank" rel="noreferrer">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 20.5h-3.6v-5.5c0-1.3-.5-2.1-1.6-2.1-1 0-1.5.7-1.8 1.3-.1.2-.1.6-.1.9v5.4H9.9V9.8h3.5v1.6c.2-.7 1.2-1.8 2.9-1.8 2 0 3.6 1.3 3.6 4v6.9ZM6 8.2c-1.2 0-2-.8-2-1.8 0-1 .8-1.8 2-1.8 1.2 0 2 .8 2 1.8S7.2 8.2 6 8.2Zm1.8 12.3H4.2V9.8h3.6v10.7Z"/><path d="M20.8 3H3.2C2.5 3 2 3.5 2 4.2v15.6c0 .7.5 1.2 1.2 1.2h17.6c.7 0 1.2-.5 1.2-1.2V4.2C22 3.5 21.5 3 20.8 3Zm0 0"/></svg>
-          </a>
-          <a href="mailto:venkatareddy.2601@gmail.com?subject=Hello%20Venkata%20Reddy&body=Hi%20Venkata%2C" aria-label="Email">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2V6c0-1.1-.9-2-2-2Zm0 2v.5l-8 5-8-5V6h16Zm0 12H4V9l8 5 8-5v9Z"/></svg>
-          </a>
-        </div>
-        <div class="stat-row">
-          <div class="stat">
-            <span class="label">Current</span>
-            <span class="value">Software Development Intern</span>
-            <span class="muted">E-S-Genius-tech Solutions</span>
-          </div>
-          <div class="stat">
-            <span class="label">Stack</span>
-            <span class="value">Node.js / React / SQL/Mongo</span>
-            <span class="muted">APIs, dashboards, deployments</span>
-          </div>
-          <div class="stat">
-            <span class="label">Projects</span>
-            <span class="value">3 full-stack builds</span>
-            <span class="muted">E-commerce, travel, dashboards</span>
-          </div>
-        </div>
-      </div>
-      <div class="hero-card">
-        <div class="card-header">
-          <span class="badge live">In progress</span>
-          <span class="muted">Bangalore, India / Remote friendly</span>
-        </div>
-        <h3>Building products that feel effortless.</h3>
-        <p class="muted">
-          I love pairing system design thinking with a designer's eye for detail - every API response, loading state,
-          and dashboard insight should feel intentional.
-        </p>
-        <ul class="card-list">
-          <li>API-first development with Express.js and clean data contracts.</li>
-          <li>React interfaces with micro-interactions and responsive layouts.</li>
-          <li>Performance-focused SQL/MongoDB queries backed by monitoring.</li>
-        </ul>
-        <div class="card-footer">
-          <span class="pill">On-call collaborator</span>
-          <span class="pill">Hands-on builder</span>
-        </div>
-      </div>
     </section>
 
-    <section id="projects" class="section reveal">
-      <div class="section-head">
-        <p class="eyebrow">Selected work</p>
-        <h2>Projects that ship</h2>
-        <p class="muted">A mix of full-stack builds that move from idea to live, reliable experiences.</p>
-      </div>
-      <div class="project-grid">
-        <article class="project-card">
-          <div class="project-copy">
-            <div class="project-top">
-              <div>
-                <h3>Travel Dashboard Portal</h3>
-                <p class="muted">Employee travel portal with spending summary, trip metrics, and admin login controls.</p>
-              </div>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a full-stack developer who loves pairing backend correctness with frontend polish. Currently shipping production features as a Software Development Intern at E-S-Genius-tech Solutions.</p>
+                    <p>I take ideas from discovery to deploy with clean REST APIs, thoughtful React UIs, and data layers that stay fast under pressure. My focus is on building reliable web experiences that balance speed with stability.</p>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <strong>Location:</strong> Bangalore, India
+                        </div>
+                        <div class="info-item">
+                            <strong>Email:</strong> venkatareddy.2601@gmail.com
+                        </div>
+                        <div class="info-item">
+                            <strong>Phone:</strong> +91 73387 00285
+                        </div>
+                        <div class="info-item">
+                            <strong>Education:</strong> M.Sc. Information Technology
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="project-image">
-              <img src="assets/travel-dashboard.png" alt="Travel dashboard screenshot showing spend, hotels, cars, and trips overview" loading="lazy">
-            </div>
-            <div class="project-structure">
-              <p class="muted">Clean split between API and React dashboard.</p>
-              <div class="code-block">
-                <div>project/</div>
-                <div>├─ backend/ (Express API: auth, analytics, risk, documents, expense, trips)</div>
-                <div>│  ├─ config/db.js · server.js · routes/ · controllers/</div>
-                <div>│  └─ setup scripts + uploads/</div>
-                <div>└─ Frontend/ (React + Vite dashboard)</div>
-                <div>   ├─ src/components (KpiCard, RiskFeed, TripDetailModal, ThemeToggle…)</div>
-                <div>   ├─ pages (dashboard, analytics, documents, expense, risk, trips, policy)</div>
-                <div>   └─ main.jsx · index.css · vite.config</div>
-              </div>
-              <ul class="structure-list">
-                <li><strong>Backend:</strong> Auth, analytics, dashboard, documents, expense, KPI, policy, risk, trips, users.</li>
-                <li><strong>Frontend:</strong> Dashboard KPIs, maps/charts, document previews, risk feeds, profile menu, theme toggle.</li>
-                <li><strong>Cleanup:</strong> Tests/logs/mock APIs removed for a lean repo.</li>
-              </ul>
-            </div>
-            <div class="pill-row">
-              <span class="pill">React</span>
-              <span class="pill">Dashboard UI</span>
-              <span class="pill">Analytics</span>
-              <span class="pill">Admin flows</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-copy">
-            <div class="project-top">
-              <div>
-                <h3>CRM Control Center</h3>
-                <p class="muted">CRM dashboard for pipeline tracking, team views, and quick actions for admins.</p>
-              </div>
-            </div>
-            <div class="project-image">
-              <img src="assets/crm-dashboard.png" alt="CRM dashboard screenshot with pipeline cards and team actions" loading="lazy">
-            </div>
-            <div class="pill-row">
-              <span class="pill">React</span>
-              <span class="pill">CRM UI</span>
-              <span class="pill">Admin tools</span>
-              <span class="pill">Responsive</span>
-            </div>
-          </div>
-        </article>
-
-      </div>
+        </div>
     </section>
 
-    <section id="about" class="section reveal">
-      <div class="section-head">
-        <p class="eyebrow">About</p>
-        <h2>More than just code</h2>
-        <p class="muted">From debugging at 2 AM to collaborating with designers, I obsess over details that make products usable.</p>
-      </div>
-      <div class="about-grid">
-        <div class="about-copy">
-          <p>
-            I'm an engineer who loves pairing backend correctness with frontend polish. My path runs through an M.Sc. in
-            Information Technology and a hands-on internship where I ship production features that balance speed with stability.
-          </p>
-          <div class="callouts">
-            <div class="callout">
-              <span class="badge">Certified</span>
-              <h4>Full-Stack Web Development</h4>
-              <p class="muted">Zealyen Infotech Firm</p>
+    <!-- Experience Section -->
+    <section id="experience" class="section bg-alt">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Aug 2025 - Present</span>
+                        <h3>Software Development Intern</h3>
+                        <p class="company">E-S-Genius-tech Solutions, Bangalore</p>
+                        <ul>
+                            <li>Built RESTful APIs in Node.js/Express for travel flows - search, booking, and notifications</li>
+                            <li>Tuned MySQL queries and indexes to cut response times by ~30%</li>
+                            <li>Delivered responsive React UIs with micro-interactions and clean state management</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023 - 2025</span>
+                        <h3>M.Sc. Information Technology</h3>
+                        <p class="company">Vels Institute of Science, Technology & Advanced Studies, Chennai</p>
+                        <ul>
+                            <li>Focused on full-stack engineering, data structures, and project delivery</li>
+                            <li>Built academic projects that strengthened API design and UI fundamentals</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="callout">
-              <span class="badge">Focused</span>
-              <h4>Clean delivery</h4>
-              <p class="muted">Pairing sensible APIs with crisp interfaces so teams can ship faster.</p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/travel-dashboard.png" alt="Travel Dashboard Portal" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <h3>Travel Dashboard Portal</h3>
+                        <p>Employee travel portal with spending summary, trip metrics, and admin login controls. Clean split between API and React dashboard.</p>
+                        <div class="project-tags">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>Express</span>
+                            <span>MySQL</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/crm-dashboard.png" alt="CRM Control Center" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <h3>CRM Control Center</h3>
+                        <p>CRM dashboard for pipeline tracking, team views, and quick actions for admins with responsive design.</p>
+                        <div class="project-tags">
+                            <span>React</span>
+                            <span>Dashboard UI</span>
+                            <span>Admin Tools</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="about-panel">
-            <div class="panel-row">
-              <div>
-                <p class="label">Tooling I reach for</p>
-                <h4>Node.js / React / Express / MySQL / MongoDB</h4>
-              </div>
-              <span class="badge live">Shipping</span>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section bg-alt">
+        <div class="container">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div class="skill-tags">
+                        <span>React</span>
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>Tailwind CSS</span>
+                        <span>Bootstrap</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div class="skill-tags">
+                        <span>Node.js</span>
+                        <span>Express.js</span>
+                        <span>Django</span>
+                        <span>REST APIs</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Database</h3>
+                    <div class="skill-tags">
+                        <span>MySQL</span>
+                        <span>MongoDB</span>
+                        <span>Schema Design</span>
+                        <span>Indexing</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="skill-tags">
+                        <span>JavaScript</span>
+                        <span>Python</span>
+                        <span>Java</span>
+                    </div>
+                </div>
             </div>
-          <ul class="panel-list">
-            <li>API design with versioning, validation, and docs.</li>
-            <li>Reusable UI patterns with responsive layouts.</li>
-            <li>CI-friendly code with linting and readable commits.</li>
-          </ul>
-          <div class="panel-footer">
-            <span class="pill">Bangalore, India</span>
-            <span class="pill">Remote friendly</span>
-          </div>
         </div>
-      </div>
     </section>
 
-    <section id="skills" class="section reveal">
-      <div class="section-head">
-        <p class="eyebrow">Skills</p>
-        <h2>What I work with</h2>
-      </div>
-      <div class="skill-grid">
-        <div class="skill-card">
-          <h3>Frontend</h3>
-          <p class="muted">React, HTML, CSS, Tailwind, Bootstrap</p>
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <p class="contact-intro">Ready to collaborate on products that need dependable engineering and thoughtful UX. Let's build something memorable.</p>
+                <div class="contact-methods">
+                    <a href="mailto:venkatareddy.2601@gmail.com" class="contact-card">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/>
+                        </svg>
+                        <h3>Email</h3>
+                        <p>venkatareddy.2601@gmail.com</p>
+                    </a>
+                    <a href="tel:+917338700285" class="contact-card">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615.121-.055 2.102-1.029 2.11-1.033z"/>
+                        </svg>
+                        <h3>Phone</h3>
+                        <p>+91 73387 00285</p>
+                    </a>
+                    <a href="https://github.com/Venkatareddy26" target="_blank" rel="noopener" class="contact-card">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        <h3>GitHub</h3>
+                        <p>@Venkatareddy26</p>
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="skill-card">
-          <h3>Backend</h3>
-          <p class="muted">Node.js, Express.js, Django fundamentals</p>
-        </div>
-        <div class="skill-card">
-          <h3>Databases</h3>
-          <p class="muted">MySQL, MongoDB, schema design, indexing</p>
-        </div>
-        <div class="skill-card">
-          <h3>Languages</h3>
-          <p class="muted">JavaScript, Python, Java</p>
-        </div>
-      </div>
     </section>
 
-    <section id="experience" class="section reveal">
-      <div class="section-head">
-        <p class="eyebrow">Experience</p>
-        <h2>Where I'm honing my craft</h2>
-      </div>
-      <div class="timeline">
-        <div class="timeline-card">
-          <div class="timeline-date">Aug 2025 - Present</div>
-          <h3>Software Development Intern</h3>
-          <p class="muted">E-S-Genius-tech Solutions, Bangalore</p>
-          <ul>
-            <li>Built RESTful APIs in Node.js/Express for travel flows - search, booking, and notifications.</li>
-            <li>Tuned MySQL queries and indexes to cut response times by ~30%.</li>
-            <li>Delivered responsive React UIs with micro-interactions and clean state management.</li>
-          </ul>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Venkata Reddy V. Built with passion for clean code and great UX.</p>
         </div>
-        <div class="timeline-card">
-          <div class="timeline-date">2023 - 2025</div>
-          <h3>M.Sc. Information Technology</h3>
-          <p class="muted">Vels Institute of Science, Technology & Advanced Studies, Chennai</p>
-          <ul>
-            <li>Focused on full-stack engineering, data structures, and project delivery.</li>
-            <li>Built academic projects that strengthened API design and UI fundamentals.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    </footer>
 
-    <section id="contact" class="section reveal">
-      <div class="cta-card">
-        <div>
-          <p class="eyebrow">Contact</p>
-          <h2>Let's build something memorable.</h2>
-          <p class="muted">Ready to collaborate on products that need dependable engineering and thoughtful UX.</p>
-        </div>
-        <div class="cta-actions">
-          <a class="btn primary" href="mailto:venkatareddy.2601@gmail.com?subject=Project%20Inquiry&body=Hi%20Venkata%2C" aria-label="Email Venkata Reddy">Email me</a>
-          <a class="btn download-btn" href="resume.pdf" download aria-label="Download Venkata Reddy resume">Download resume</a>
-          <div class="contact-row">
-            <span class="pill">+91 73387 00285</span>
-            <span class="pill">Bangalore, India</span>
-          </div>
-        </div>
-      </div>
-      <div class="contact-form">
-        <div class="section-head">
-          <h3>Get in touch with me</h3>
-          <p class="muted">Share a few details and I'll follow up quickly about roles, collaborations, or freelance work.</p>
-        </div>
-        <form class="form-grid">
-          <label class="field">
-            <span>Name</span>
-            <input type="text" name="name" placeholder="Your name" required>
-          </label>
-          <label class="field">
-            <span>Email</span>
-            <input type="email" name="email" placeholder="you@example.com" required>
-          </label>
-          <label class="field">
-            <span>Collaboration type</span>
-            <select name="collaboration" required>
-              <option value="">Choose one</option>
-              <option value="fulltime">Full-time role</option>
-              <option value="freelance">Freelance project</option>
-              <option value="contract">Contract/short-term</option>
-              <option value="other">Other</option>
-            </select>
-          </label>
-          <label class="field full">
-            <span>Project details</span>
-            <textarea name="message" rows="3" placeholder="Timeline, goals, links, expectations..." required></textarea>
-          </label>
-          <div class="form-actions">
-            <button type="submit" class="btn primary">Send message</button>
-            <a class="btn ghost" href="mailto:venkatareddy.2601@gmail.com?subject=Hello%20Venkata%20Reddy&body=Hi%20Venkata%2C">Email directly</a>
-          </div>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-inner">
-      <p>Built by Venkata Reddy V - eager to learn, ship, and collaborate.</p>
-      <div class="footer-links">
-        <a class="btn ghost small" href="mailto:venkatareddy.2601@gmail.com?subject=Hello%20Venkata%20Reddy&body=Hi%20Venkata%2C">Email</a>
-        <a class="btn download-btn small" href="resume.pdf" download aria-label="Download Venkata Reddy resume">Resume</a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
