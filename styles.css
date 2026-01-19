@@ -436,6 +436,10 @@ body::after {
     position: relative;
     overflow: hidden;
     backdrop-filter: blur(10px);
+    color: #ffffff;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    font-weight: 500;
 }
 
 .info-item::before {
