@@ -238,7 +238,7 @@ p {
 }
 
 main {
-  padding-top: 14rem;
+  padding-top: 9rem;
   position: relative;
   z-index: 1;
   min-height: 100vh;
@@ -249,7 +249,7 @@ main {
   grid-template-columns: 1.2fr 0.8fr;
   gap: 3rem;
   align-items: start;
-  padding: 0rem 0 3rem;
+  padding: 1.5rem 0 3rem;
   min-height: calc(85vh - var(--safe-top));
   scroll-margin-top: 100px;
 }
@@ -263,7 +263,7 @@ main {
   text-transform: uppercase;
   font-size: 0.85rem;
   font-weight: 600;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
 }
 
 .availability .line {
@@ -274,7 +274,7 @@ main {
 
 .hero h1 {
   font-size: clamp(2.5rem, 6vw, 4.5rem);
-  margin: 0.25rem 0 0.6rem;
+  margin: 0.35rem 0 0.7rem;
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.03em;
@@ -1022,12 +1022,12 @@ main {
   }
 
   main {
-    padding-top: 13rem;
+    padding-top: 9rem;
   }
 
   .hero {
     grid-template-columns: 1fr;
-    padding-top: 0rem;
+    padding-top: 1rem;
     gap: 2.5rem;
   }
 
@@ -1043,7 +1043,7 @@ main {
   }
 
   main {
-    padding-top: 13rem;
+    padding-top: 9rem;
   }
 
   .nav-links {
@@ -1091,7 +1091,7 @@ main {
 
   .hero {
     grid-template-columns: 1fr;
-    padding-top: 0rem;
+    padding-top: 1rem;
     gap: 2rem;
     min-height: auto;
   }
@@ -1135,7 +1135,7 @@ main {
   }
 
   main {
-    padding-top: 12rem;
+    padding-top: 9rem;
   }
 
   .section {
@@ -1144,7 +1144,7 @@ main {
   }
 
   .hero {
-    padding-top: 0rem;
+    padding-top: 0.75rem;
     gap: 1.75rem;
   }
 
@@ -1230,7 +1230,7 @@ main {
 
 @media (max-width: 640px) {
   main {
-    padding-top: 12rem;
+    padding-top: 9rem;
   }
 
   .container {
@@ -1239,7 +1239,7 @@ main {
   }
 
   .hero {
-    padding-top: 0rem;
+    padding-top: 0.5rem;
     gap: 1.5rem;
   }
 
@@ -1401,7 +1401,7 @@ main {
   }
 
   main {
-    padding-top: 11.5rem;
+    padding-top: 8.5rem;
   }
 
   .nav {
@@ -1409,7 +1409,7 @@ main {
   }
 
   .hero {
-    padding-top: 0rem;
+    padding-top: 0.5rem;
     gap: 1.25rem;
   }
 
