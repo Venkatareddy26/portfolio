@@ -82,13 +82,13 @@ body::after {
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(15, 23, 42, 0.85);
+    background: rgba(15, 23, 42, 0.95);
     backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
     border-radius: 50px;
     z-index: 1000;
     padding: 0 30px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(59, 130, 246, 0.1) inset;
     animation: slideDown 0.6s ease-out;
     max-width: 1160px;
     width: calc(100% - 40px);
@@ -116,7 +116,7 @@ body::after {
 .logo {
     font-size: 1.5rem;
     font-weight: 800;
-    background: linear-gradient(135deg, #fff 0%, #3b82f6 100%);
+    background: linear-gradient(135deg, #fff 0%, #60a5fa 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -155,7 +155,7 @@ body::after {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(59, 130, 246, 0.2);
     transition: left 0.3s ease;
     z-index: -1;
     border-radius: 25px;
@@ -236,27 +236,28 @@ body::after {
 
 .badge {
     display: inline-block;
-    background: linear-gradient(135deg, rgba(14, 165, 233, 0.15), rgba(20, 184, 166, 0.15));
+    background: rgba(30, 41, 59, 0.8);
     backdrop-filter: blur(10px);
-    color: #0ea5e9;
-    padding: 10px 20px;
+    color: #60a5fa;
+    padding: 12px 24px;
     border-radius: 30px;
-    font-size: 0.875rem;
+    font-size: 0.9375rem;
     font-weight: 600;
-    margin-bottom: 1.5rem;
-    border: 1px solid rgba(14, 165, 233, 0.3);
+    margin-bottom: 2rem;
+    border: 1px solid rgba(59, 130, 246, 0.4);
     animation: pulse 2s ease-in-out infinite;
-    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.2);
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.3);
+    letter-spacing: 0.3px;
 }
 
 @keyframes pulse {
     0%, 100% {
         transform: scale(1);
-        box-shadow: 0 4px 12px rgba(14, 165, 233, 0.2);
+        box-shadow: 0 4px 16px rgba(37, 99, 235, 0.3);
     }
     50% {
         transform: scale(1.02);
-        box-shadow: 0 6px 16px rgba(14, 165, 233, 0.3);
+        box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
     }
 }
 
