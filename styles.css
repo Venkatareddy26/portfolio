@@ -238,7 +238,7 @@ p {
 }
 
 main {
-  padding-top: 12rem;
+  padding-top: 14rem;
   position: relative;
   z-index: 1;
   min-height: 100vh;
@@ -1022,7 +1022,7 @@ main {
   }
 
   main {
-    padding-top: 11rem;
+    padding-top: 13rem;
   }
 
   .hero {
@@ -1043,7 +1043,7 @@ main {
   }
 
   main {
-    padding-top: 11rem;
+    padding-top: 13rem;
   }
 
   .nav-links {
@@ -1135,7 +1135,7 @@ main {
   }
 
   main {
-    padding-top: 11rem;
+    padding-top: 12rem;
   }
 
   .section {
@@ -1230,7 +1230,7 @@ main {
 
 @media (max-width: 640px) {
   main {
-    padding-top: 11rem;
+    padding-top: 12rem;
   }
 
   .container {
@@ -1401,7 +1401,7 @@ main {
   }
 
   main {
-    padding-top: 10.5rem;
+    padding-top: 11.5rem;
   }
 
   .nav {
