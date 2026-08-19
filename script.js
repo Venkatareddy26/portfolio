@@ -305,6 +305,16 @@
         document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') closeMenu();
         });
+
+        // Sync navbar height as CSS variable for mobile menu positioning
+        function syncNavbarHeight() {
+            var navbar = document.getElementById('navbar');
+            if (navbar) {
+                document.documentElement.style.setProperty('--navbar-height', navbar.offsetHeight + 'px');
+            }
+        }
+        syncNavbarHeight();
+        window.addEventListener('resize', syncNavbarHeight, { passive: true });
     }
 
     // ============================================
