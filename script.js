@@ -276,16 +276,30 @@
             btn.classList.remove('active');
             navLinks.classList.remove('active');
             document.body.classList.remove('menu-open');
+            document.documentElement.classList.remove('menu-open');
         }
 
         btn.addEventListener('click', function () {
             var open = navLinks.classList.toggle('active');
             btn.classList.toggle('active', open);
             document.body.classList.toggle('menu-open', open);
+            document.documentElement.classList.toggle('menu-open', open);
         });
 
         navLinks.querySelectorAll('a').forEach(function (link) {
             link.addEventListener('click', closeMenu);
+        });
+
+        document.addEventListener('click', function (e) {
+            if (!navLinks.classList.contains('active')) return;
+            if (e.target.closest('#navLinks') || e.target.closest('#mobileMenuBtn')) return;
+            closeMenu();
+        });
+
+        window.addEventListener('resize', function () {
+            if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+                closeMenu();
+            }
         });
 
         document.addEventListener('keydown', function (e) {
