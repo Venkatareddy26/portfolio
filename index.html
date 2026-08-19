@@ -10,36 +10,55 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Three.js 3D Background Canvas -->
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+    <!-- Ambient Background Layers -->
+    <div class="bg-mesh" aria-hidden="true"></div>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-noise" aria-hidden="true"></div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <!-- Custom Cursor (desktop only) -->
+    <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+    <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <a href="#home" class="logo">VR.</a>
-                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="resume.pdf?v=20250320-v2" download="Venkata_Reddy_Resume.pdf" class="btn-primary">Resume</a></li>
-                </ul>
-            </div>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">VR.</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" class="nav-link" data-nav="about">About</a></li>
+                <li><a href="#experience" class="nav-link" data-nav="experience">Experience</a></li>
+                <li><a href="#projects" class="nav-link" data-nav="projects">Projects</a></li>
+                <li><a href="#skills" class="nav-link" data-nav="skills">Skills</a></li>
+                <li><a href="#contact" class="nav-link" data-nav="contact">Contact</a></li>
+                <li><a href="resume.pdf?v=20250320-v3" download="Venkata_Reddy_Resume.pdf" class="btn-primary nav-resume">Resume</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="hero-glow hero-glow-1" aria-hidden="true"></div>
+        <div class="hero-glow hero-glow-2" aria-hidden="true"></div>
+        <div class="hero-glow hero-glow-3" aria-hidden="true"></div>
         <div class="container">
             <div class="hero-content">
-                <div class="badge">Available for full-time roles and select freelance work</div>
+                <div class="badge">
+                    <span class="badge-dot" aria-hidden="true"></span>
+                    Available for full-time roles and select freelance work
+                </div>
                 <h1 class="hero-title">Venkata Reddy V</h1>
                 <p class="hero-subtitle">Full-Stack Developer</p>
                 <p class="hero-description">
@@ -69,27 +88,81 @@
                 </div>
             </div>
         </div>
+        <div class="scroll-indicator" aria-hidden="true">
+            <span class="scroll-mouse"><span class="scroll-wheel"></span></span>
+        </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section">
+    <section id="about" class="section section-about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <div class="section-heading">
+                <h2 class="section-title reveal">About Me</h2>
+            </div>
             <div class="about-content">
-                <div class="about-text">
-                    <p>I'm a full-stack developer who loves pairing backend correctness with frontend polish. Shipped production features as a Software Developer at E-S-Genius-tech Solutions.</p>
-                    <p>I take ideas from discovery to deploy with clean REST APIs, thoughtful React UIs, and data layers that stay fast under pressure. My focus is on building reliable web experiences that balance speed with stability.</p>
+                <div class="about-visual reveal" aria-hidden="true">
+                    <div class="profile-card" id="profileCard">
+                        <span class="profile-ring profile-ring-a"></span>
+                        <span class="profile-ring profile-ring-b"></span>
+                        <div class="profile-monogram">VR</div>
+                        <span class="profile-float-icon profile-float-icon-1">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/>
+                            </svg>
+                        </span>
+                        <span class="profile-float-icon profile-float-icon-2">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <ellipse cx="12" cy="5" rx="8" ry="3"/>
+                                <path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/>
+                                <path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3"/>
+                            </svg>
+                        </span>
+                        <span class="profile-float-icon profile-float-icon-3">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <div class="about-body">
+                    <div class="about-text reveal">
+                        <p>I'm a full-stack developer who loves pairing backend correctness with frontend polish. Shipped production features as a Software Developer at E-S-Genius-tech Solutions.</p>
+                        <p>I take ideas from discovery to deploy with clean REST APIs, thoughtful React UIs, and data layers that stay fast under pressure. My focus is on building reliable web experiences that balance speed with stability.</p>
+                    </div>
                     <div class="info-grid">
-                        <div class="info-item">
+                        <div class="info-item reveal">
+                            <span class="info-item-icon" aria-hidden="true">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                            </span>
                             <strong>Location:</strong> Bangalore, India
                         </div>
-                        <div class="info-item">
+                        <div class="info-item reveal">
+                            <span class="info-item-icon" aria-hidden="true">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                    <path d="M22 6l-10 7L2 6"/>
+                                </svg>
+                            </span>
                             <strong>Email:</strong> venkatareddy.2601@gmail.com
                         </div>
-                        <div class="info-item">
+                        <div class="info-item reveal">
+                            <span class="info-item-icon" aria-hidden="true">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.08 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                                </svg>
+                            </span>
                             <strong>Phone:</strong> +91 73387 00285
                         </div>
-                        <div class="info-item">
+                        <div class="info-item reveal">
+                            <span class="info-item-icon" aria-hidden="true">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 10L12 5 2 10l10 5 10-5z"/>
+                                    <path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/>
+                                </svg>
+                            </span>
                             <strong>Education:</strong> M.Sc. Information Technology
                         </div>
                     </div>
@@ -99,12 +172,14 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="section bg-alt">
+    <section id="experience" class="section section-alt">
         <div class="container">
-            <h2 class="section-title">Experience</h2>
+            <div class="section-heading">
+                <h2 class="section-title reveal">Experience</h2>
+            </div>
             <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
+                <div class="timeline-item reveal-left">
+                    <div class="timeline-marker" aria-hidden="true"><span></span></div>
                     <div class="timeline-content">
                         <span class="timeline-date">Jan 2025 - Feb 2026</span>
                         <h3>Software Developer</h3>
@@ -116,8 +191,8 @@
                         </ul>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
+                <div class="timeline-item reveal-right">
+                    <div class="timeline-marker" aria-hidden="true"><span></span></div>
                     <div class="timeline-content">
                         <span class="timeline-date">2023 - 2025</span>
                         <h3>M.Sc. Information Technology</h3>
@@ -133,13 +208,16 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section">
+    <section id="projects" class="section section-projects">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <div class="section-heading">
+                <h2 class="section-title reveal">Featured Projects</h2>
+            </div>
             <div class="projects-grid">
-                <div class="project-card">
+                <article class="project-card reveal" data-tilt>
                     <div class="project-image">
                         <img src="assets/travel-dashboard.png" alt="Travel Dashboard Portal" loading="lazy">
+                        <div class="project-image-overlay" aria-hidden="true"></div>
                     </div>
                     <div class="project-content">
                         <h3>Travel Dashboard Portal</h3>
@@ -151,10 +229,11 @@
                             <span>MySQL</span>
                         </div>
                     </div>
-                </div>
-                <div class="project-card">
+                </article>
+                <article class="project-card reveal" data-tilt>
                     <div class="project-image">
                         <img src="assets/crm-dashboard.png" alt="CRM Control Center" loading="lazy">
+                        <div class="project-image-overlay" aria-hidden="true"></div>
                     </div>
                     <div class="project-content">
                         <h3>CRM Control Center</h3>
@@ -165,51 +244,147 @@
                             <span>Admin Tools</span>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="section bg-alt">
+    <section id="skills" class="section section-alt">
         <div class="container">
-            <h2 class="section-title">Skills & Technologies</h2>
+            <div class="section-heading">
+                <h2 class="section-title reveal">Skills & Technologies</h2>
+            </div>
             <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Frontend</h3>
+                <div class="skill-category reveal" data-tilt>
+                    <div class="skill-category-head">
+                        <span class="skill-cat-icon" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                                <path d="M8 21h8M12 17v4"/>
+                            </svg>
+                        </span>
+                        <h3>Frontend</h3>
+                    </div>
                     <div class="skill-tags">
-                        <span>React</span>
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>JavaScript</span>
-                        <span>Tailwind CSS</span>
-                        <span>Bootstrap</span>
+                        <span class="skill-tag tag-react">
+                            <svg class="tag-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.265c1.04.056 2.082.24 3.103.53.754 1.177 1.39 2.438 1.92 3.736-.532 1.296-1.17 2.55-1.918 3.725-1.026.293-2.072.476-3.106.532-1.032-.056-2.073-.24-3.092-.53-.75-1.175-1.388-2.43-1.92-3.723.532-1.297 1.17-2.56 1.92-3.737 1.022-.292 2.068-.474 3.093-.532zm-4.11 1.05c-.49.694-.936 1.42-1.34 2.178-.4.75-.75 1.524-1.035 2.31-.286-.788-.635-1.56-1.037-2.308.406-.76.852-1.487 1.342-2.182.35.002.695-.002 1.07.002zm7.585 0c.37.002.716.002 1.064 0 .488.695.93 1.42 1.335 2.178.405.75.755 1.524 1.042 2.308-.29.787-.64 1.56-1.044 2.31-.405.756-.85 1.483-1.338 2.176-.37-.005-.715-.005-1.064-.005-.37 0-.72.005-1.072.005.492-.694.94-1.42 1.343-2.177.4-.752.747-1.524 1.032-2.31-.285-.788-.636-1.56-1.035-2.31-.404-.758-.85-1.484-1.335-2.176zm4.05 7.588c.252.886.4 1.766.53 2.62.215 1.86-.065 3.31-.73 3.695-.152.09-.336.126-.53.126-1.014 0-2.513-.8-4.106-2.277.69-.71 1.374-1.53 2.023-2.434 1.1-.117 2.153-.302 3.114-.54.065.3.1.596.135.88zM4.8 15.566c.108.463.19.922.254 1.403.228 1.852-.06 3.3-.726 3.684-.15.086-.33.126-.53.126-.66 0-1.48-.394-2.287-1.187-.8-.8-1.272-1.95-1.302-3.315.86.618 1.874 1.08 2.988 1.344.2.05.403.088.603.123zm2.94-1.383c.663-.237 1.343-.43 2.036-.577.44.733.9 1.49 1.382 2.265-.66.44-1.285.93-1.85 1.46-.5-.487-1.06-1.03-1.64-1.643-.66-.72-1.12-1.36-1.46-2.003.46-.17.93-.34 1.413-.5zM15.3 16.62c.49-.58.95-1.19 1.385-1.815.507.16 1.002.345 1.48.55.3.55.66 1.08 1.077 1.59-.553.44-1.133.89-1.734 1.327-.486-.68-1.28-1.398-2.208-1.652z"/></svg>
+                            React
+                        </span>
+                        <span class="skill-tag tag-html5">
+                            <svg class="tag-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/></svg>
+                            HTML5
+                        </span>
+                        <span class="skill-tag tag-css3">
+                            <svg class="tag-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.288l5.373-1.53L18.59 4.414z"/></svg>
+                            CSS3
+                        </span>
+                        <span class="skill-tag tag-javascript">
+                            <svg class="tag-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/></svg>
+                            JavaScript
+                        </span>
+                        <span class="skill-tag tag-tailwind">
+                            <svg class="tag-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z"/></svg>
+                            Tailwind CSS
+                        </span>
+                        <span class="skill-tag tag-bootstrap">
+                            <svg class="tag-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.77 11.24H9.956V8.202h2.152c1.17 0 1.834.522 1.834 1.466 0 1.008-.773 1.572-2.174 1.572zm.324 1.206H9.957v3.348h2.231c1.459 0 2.232-.585 2.232-1.685s-.795-1.663-2.326-1.663zM24 11.39v1.218c-1.128.108-1.817.944-2.226 2.268-.407 1.319-.463 2.937-.42 4.186.045 1.3-.968 2.69-2.259 2.943-2.563.463-3.773 1.455-7.095 1.455s-4.532-.992-7.096-1.455c-1.291-.253-2.304-1.643-2.259-2.943.043-1.249-.013-2.867-.42-4.186-.41-1.324-1.098-2.16-2.226-2.268v-1.218c1.128-.108 1.817-.944 2.226-2.268.407-1.319.463-2.937.42-4.186-.045-1.3.968-2.69 2.259-2.943C7.468.064 8.678-.928 12-.928s4.532.992 7.096 1.455c1.291.253 2.304 1.643 2.259 2.943-.043 1.249.013 2.867.42 4.186.41 1.324 1.098 2.16 2.226 2.268zm-7.895 5.94c.846-.465 1.443-1.33 1.443-2.425 0-1.886-1.529-2.94-3.895-2.94h-2.77v9.996h2.77c2.534 0 4.093-1.043 4.093-3.13 0-1.135-.422-1.998-1.641-2.5z"/></svg>
+                            Bootstrap
+                        </span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3>Backend</h3>
+                <div class="skill-category reveal" data-tilt>
+                    <div class="skill-category-head">
+                        <span class="skill-cat-icon" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="8" rx="2"/>
+                                <rect x="2" y="14" width="20" height="8" rx="2"/>
+                                <path d="M6 6h.01M6 18h.01"/>
+                            </svg>
+                        </span>
+                        <h3>Backend</h3>
+                    </div>
                     <div class="skill-tags">
-                        <span>Node.js</span>
-                        <span>Express.js</span>
-                        <span>Django</span>
-                        <span>REST APIs</span>
+                        <span class="skill-tag tag-nodejs">
+                            <svg class="tag-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.998 24c-.321 0-.641-.084-.919-.252l-2.936-1.737c-.437-.244-.224-.33-.08-.38.582-.203.7-.25 1.321-.604.066-.037.152-.023.219.017l2.256 1.339c.082.045.197.045.269 0l8.793-5.076c.082-.045.135-.129.135-.224V6.917c0-.094-.053-.178-.135-.224l-8.793-5.067c-.081-.045-.187-.045-.269 0L2.965 6.693c-.082.045-.135.129-.135.224v10.158c0 .09.057.171.135.216l2.409 1.392c1.306.653 2.106-.116 2.106-.89V7.709c0-.134.108-.243.242-.243h1.116c.133 0 .242.109.242.243v9.884c0 1.744-.951 2.745-2.604 2.745-.509 0-.91-.136-1.458-.384l-2.153-1.24c-.409-.235-.652-.674-.652-1.145V6.917c0-.471.243-.91.652-1.145l8.793-5.076c.408-.234.909-.234 1.316 0l8.793 5.076c.411.235.652.674.652 1.145v10.158c0 .471-.241.91-.652 1.145l-8.793 5.082c-.279.163-.601.244-.922.244"/></svg>
+                            Node.js
+                        </span>
+                        <span class="skill-tag tag-express">
+                            <svg class="tag-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 18.588a1.529 1.529 0 0 1-1.895-.72l-3.45-4.771-.5-.667-4.003 5.444a1.466 1.466 0 0 1-1.802.708l5.158-6.92-4.798-6.251a1.595 1.595 0 0 1 1.9.666l3.576 4.83 3.596-4.81a1.435 1.435 0 0 1 1.788-.668L21.708 7.96c.382.149.618.523.618.928 0 .405-.237.78-.618.93l-1.033.387-5.043 6.954 5.634 7.61a1.53 1.53 0 0 1-1.266 2.32z"/></svg>
+                            Express.js
+                        </span>
+                        <span class="skill-tag tag-django">
+                            <svg class="tag-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.146 0h3.924v18.166c-2.013.382-3.491.535-5.096.535-4.791 0-7.288-2.166-7.288-6.32 0-4.002 2.65-6.6 6.753-6.6.637 0 1.121.05 1.707.203zm0 9.143a3.894 3.894 0 00-1.325-.204c-1.988 0-3.134 1.223-3.134 3.365 0 2.09 1.096 3.236 3.109 3.236.433 0 .79-.025 1.35-.102V9.142zM21.314 6.06v9.098c0 3.134-.229 4.638-.917 5.937-.637 1.249-1.478 2.039-3.211 2.905l-3.644-1.733c1.733-.815 2.574-1.53 3.109-2.625.561-1.121.739-2.421.739-5.835V6.06z"/></svg>
+                            Django
+                        </span>
+                        <span class="skill-tag tag-rest">
+                            <svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <circle cx="12" cy="5" r="2.5"/>
+                                <circle cx="5" cy="19" r="2.5"/>
+                                <circle cx="19" cy="19" r="2.5"/>
+                                <path d="M12 7.5v4.5M5 16.5v-2M19 16.5v-2M12 12l-7 7M12 12l7 7"/>
+                            </svg>
+                            REST APIs
+                        </span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3>Database</h3>
+                <div class="skill-category reveal" data-tilt>
+                    <div class="skill-category-head">
+                        <span class="skill-cat-icon" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <ellipse cx="12" cy="5" rx="8" ry="3"/>
+                                <path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/>
+                                <path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3"/>
+                            </svg>
+                        </span>
+                        <h3>Database</h3>
+                    </div>
                     <div class="skill-tags">
-                        <span>MySQL</span>
-                        <span>MongoDB</span>
-                        <span>Schema Design</span>
-                        <span>Indexing</span>
+                        <span class="skill-tag tag-mysql">
+                            <svg class="tag-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.757 16.83h-1.462l.041-2.211c.032-1.121.04-2.174.022-2.379a16.12 16.12 0 01-.336 1.617l-.746 2.973H12.94l-.735-2.918a23.7 23.7 0 01-.336-1.62c-.028.223-.042 1.276-.017 2.414l.042 2.124h-1.354l-.205-6.653h1.817l.63 2.648c.168.728.305 1.378.446 2.052.052-.237.103-.492.159-.748.098-.416.203-.8.367-1.652l.629-2.3h1.826zM18.9 10.177h-1.42v6.653h1.42zm-4.112-1.15a.86.86 0 01-.884-.892c0-.49.397-.89.902-.89.505 0 .884.4.884.89a.85.85 0 01-.902.892zm8.73 4.737a10.083 10.083 0 00-1.72-1.235 12.99 12.99 0 00.997-1.375 5.877 5.877 0 00.616-1.488.48.48 0 00-.013-.119.477.477 0 00-.448-.351h-1.341a.443.443 0 00-.445.366 7.036 7.036 0 01-.413 1.126c-.232.51-.5.978-.83 1.481a14.31 14.31 0 01-1.158-1.278 5.965 5.965 0 01-.724-1.256.47.47 0 00-.47-.28l-1.44.003a.366.366 0 00-.383.32 2.348 2.348 0 00.23 1.151c.231.545.528 1.056.877 1.522-.244.328-.517.655-.777.94a7.24 7.24 0 00-.785.898c-.115.163-.17.265-.21.382a.56.56 0 00.502.766h1.268a.462.462 0 00.402-.24c.154-.294.342-.6.567-.906.295-.334.606-.66.916-.966.372.47.761.933 1.222 1.412.24.245.376.367.586.407a.5.5 0 00.478-.168c.111-.15.08-.214.148-.497.064-.313.05-.34.315-.549.178-.14.294-.169.501-.196.201-.026.5-.052.732-.12.223-.068.582-.17.582-.575a.446.446 0 00-.006-.07 5.003 5.003 0 00-.126.02z"/></svg>
+                            MySQL
+                        </span>
+                        <span class="skill-tag tag-mongodb">
+                            <svg class="tag-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.193 9.555c-1.264-5.58-4.252-7.414-4.573-8.115-.28-.394-.538-.954-.9-1.44-.43.508-.788 1.265-.95 1.71-.396 1.087-.27 3.315-.582 4.34-.555 1.82-2.638 2.638-3.797 4.875-2.912 5.64.386 10.098 2.652 11.383 1.44.816 3.285.656 4.427.175 1.746-.735 3.022-2.464 3.298-4.716.21-1.71-.08-5.505-1.575-8.112zM11.636 22.33c-.085-.013-.17-.028-.256-.044-.53-.106-.846-.343-.99-.716-.186-.48-.07-1.024.033-1.7.357-2.353 1.567-3.44 1.93-5.398.135-.73.164-1.506.34-2.26.06-.256.135-.51.213-.763.055 1.51.035 3.02-.346 4.67-.21.92-.637 1.67-.865 2.49-.085.305-.11.633-.206.938-.185.578-.395 1.115-.852 1.585.106.023.217.044.325.07.352.08.594.125.852.154.078.008.158.017.24.024 1.11.117 2.583.197 3.482-.325-.39.22-1.15.203-2.007.27l-.155.02z"/></svg>
+                            MongoDB
+                        </span>
+                        <span class="skill-tag tag-schema">
+                            <svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                <path d="M3 9h18M3 15h18M12 9v12"/>
+                            </svg>
+                            Schema Design
+                        </span>
+                        <span class="skill-tag tag-indexing">
+                            <svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>
+                            </svg>
+                            Indexing
+                        </span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3>Languages</h3>
+                <div class="skill-category reveal" data-tilt>
+                    <div class="skill-category-head">
+                        <span class="skill-cat-icon" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M8 9l-3 3 3 3M16 9l3 3-3 3M13 5l-2 14"/>
+                            </svg>
+                        </span>
+                        <h3>Languages</h3>
+                    </div>
                     <div class="skill-tags">
-                        <span>JavaScript</span>
-                        <span>Python</span>
-                        <span>Java</span>
+                        <span class="skill-tag tag-javascript">
+                            <svg class="tag-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/></svg>
+                            JavaScript
+                        </span>
+                        <span class="skill-tag tag-python">
+                            <svg class="tag-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09-.33.22zM22.94 7.13l.19.02.25.04.28.08.31.12.31.16.3.2.28.24.25.28.2.32.15.36.1.4.04.43.02.45-.01.47-.06.48-.1.46-.14.42-.19.38-.23.32-.27.27-.3.22-.34.17-.36.13-.38.08-.39.04-.4.01-.41.01-.87-.01H12.5v.83h3.37l.01 1.77.02.37-.05.34-.11.31-.17.28-.25.26-.31.23-.38.2-.44.18-.51.15-.58.12-.64.1-.71.06-.77.04-.84.02-1.27-.05h-5.1l-.9.2-.73.26-.59.3-.45.32-.34.34-.25.34-.16.33-.1.3-.04.26-.02.2.01.13V16.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02h-1.7l-.69-.05-.59-.14-.5-.22-.41-.27-.33-.32-.27-.35-.2-.36-.15-.37-.1-.35-.07-.32-.04-.27-.02-.21V10.1l.05-.67.13-.57.2-.46.27-.37.32-.3.34-.24.36-.18.37-.13.38-.08.39-.04.4-.01h5.77v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05 2.28.02h4.99l.9-.2.73-.26.59-.3.45-.32.34-.34.25-.34.16-.33.1-.3.04-.26.02-.2-.01-.13V5.5l.05-.63.13-.55.21-.46.26-.38.3-.31.33-.25.35-.19.35-.14.33-.1.3-.07.26-.04.21-.02h2.15l.21.03.28.07.32.12.35.18.36.26.36.36.35.46.32.59.28.73.21.88.14 1.05.05 1.23-.06 1.22-.16 1.04-.24.87-.32.71-.36.57-.4.44-.42.33-.42.24-.4.16-.36.1-.32.05-.24.01-.16-.01-.06-.01h-8.16v.83h4.05l.01 2.75.02.37-.05.34-.11.31-.17.28-.25.26-.31.23-.38.2-.44.18-.51.15-.58.12-.64.1-.71.06-.77.04-.84.02-1.27-.05-2.28-.02H12.5l-.9.2-.73.26-.59.3-.45.32-.34.34-.25.34-.16.33-.1.3-.04.26-.02.2.01.13v1.72l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02h-1.7l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09-.33.22z"/></svg>
+                            Python
+                        </span>
+                        <span class="skill-tag tag-java">
+                            <svg class="tag-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.321.646-4.699 2.013-10.633-.117-6.943-1.149M8.276 15.933s-1.028.761.542.924c2.032.209 3.636.227 6.413-.308 0 0 .384.389.987.602-5.679 1.661-12.007.13-7.942-1.218M13.116 11.475c1.158 1.333-.304 2.533-.304 2.533s2.939-1.518 1.589-3.418c-1.261-1.772-2.228-2.652 3.007-5.688 0 0-8.216 2.051-4.292 6.573M19.33 20.504s.679.559-.747.991c-2.712.822-11.288 1.069-13.669.033-.856-.373.75-.89 1.254-.998.527-.114.828-.093.828-.093-.953-.671-6.156 1.317-2.643 1.887 9.58 1.553 17.462-.7 14.977-1.82M13.383 14.417c1.344.808-.804 1.51-1.606 1.547-1.854.085-3.454.224-3.454.224s1.029.528 2.531.579c1.503.05 4.028-.522 4.028-.522l-1.499-.812M18.226 2.115s1.708 2.297-1.425 6.308c-2.504 3.211-1.912 5.044-.002 7.136-1.83-1.652-3.173-3.108-2.274-4.463 1.099-1.658 3.152-2.771 3.701-8.981M20.694 20.032c.088 1.263-1.393 2.251-4.308 2.652-1.743.24-3.86.273-5.74.021-1.964-.261-3.562-.862-3.562-.862s1.512 1.451 4.241 1.611c2.185.127 4.833-.35 5.391-2.208.125-.443.008-1.151.008-1.151l-2.471.168z"/></svg>
+                            Java
+                        </span>
                     </div>
                 </div>
             </div>
@@ -217,27 +392,29 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section">
+    <section id="contact" class="section section-contact">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
+            <div class="section-heading">
+                <h2 class="section-title reveal">Get In Touch</h2>
+            </div>
             <div class="contact-content">
-                <p class="contact-intro">Ready to collaborate on products that need dependable engineering and thoughtful UX. Let's build something memorable.</p>
+                <p class="contact-intro reveal">Ready to collaborate on products that need dependable engineering and thoughtful UX. Let's build something memorable.</p>
                 <div class="contact-methods">
-                    <a href="mailto:venkatareddy.2601@gmail.com" class="contact-card">
+                    <a href="mailto:venkatareddy.2601@gmail.com" class="contact-card reveal">
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/>
                         </svg>
                         <h3>Email</h3>
                         <p>venkatareddy.2601@gmail.com</p>
                     </a>
-                    <a href="tel:+917338700285" class="contact-card">
+                    <a href="tel:+917338700285" class="contact-card reveal">
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615.121-.055 2.102-1.029 2.11-1.033z"/>
                         </svg>
                         <h3>Phone</h3>
                         <p>+91 73387 00285</p>
                     </a>
-                    <a href="https://github.com/Venkatareddy26" target="_blank" rel="noopener" class="contact-card">
+                    <a href="https://github.com/Venkatareddy26" target="_blank" rel="noopener" class="contact-card reveal">
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                         </svg>
@@ -251,11 +428,16 @@
 
     <!-- Footer -->
     <footer class="footer">
+        <div class="footer-watermark" aria-hidden="true">Venkata Reddy V</div>
         <div class="container">
-            <p>&copy; 2025 Venkata Reddy V. Built with passion for clean code and great UX.</p>
+            <div class="footer-inner">
+                <p>&copy; 2025 Venkata Reddy V. Built with passion for clean code and great UX.</p>
+            </div>
         </div>
     </footer>
 
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
