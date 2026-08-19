@@ -1886,6 +1886,12 @@ html.js .reveal-right.visible {
         top: 10px;
     }
 
+    body.menu-open .navbar {
+        background: rgba(7, 9, 18, 0.98);
+        border-color: rgba(139, 92, 246, 0.25);
+        box-shadow: 0 12px 44px rgba(0, 0, 0, 0.55);
+    }
+
     .nav-container {
         padding: 0.4rem 0;
     }
